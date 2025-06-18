@@ -179,7 +179,9 @@ int main() {
         cout << e.what() << endl;
     }
 
-    auto [lambda, eigenvec] = powerIteration(A);
+    pair<double, Vector> result = powerIteration(A);
+    double lambda = result.first;
+    Vector eigenvec = result.second;
     cout << "\nDominant Eigenvalue (Power Iteration): " << lambda << "\nEigenvector: ";
     for (double v : eigenvec) cout << v << " ";
     cout << endl;
